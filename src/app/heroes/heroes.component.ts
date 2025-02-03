@@ -1,19 +1,19 @@
 import { Component } from '@angular/core';
 import { Hero } from '../hero';
 import { NgFor } from '@angular/common';
-import { HEROES } from '../mock-heroes';
 import { HeroDetailComponent } from "../hero-detail/hero-detail.component";
+import { HeroService } from '../hero.service';
 
 @Component({
   selector: 'app-heroes',
   standalone: true,
-  imports: [  NgFor, HeroDetailComponent],
+  imports: [  NgFor, HeroDetailComponent ],
   templateUrl: './heroes.component.html',
   styleUrl: './heroes.component.css'
 })
 
 export class HeroesComponent {
-  heroes = HEROES;
+  heroes: Hero[] = [];
   selectedHero?: Hero 
 
   onSelect(hero : Hero){
