@@ -18,6 +18,10 @@ export class HeroesComponent {
 
   constructor(private heroService: HeroService) {}
 
+  getHeroes(): void {
+    this.heroes = this.heroService.getHeroes();
+  }
+
   onSelect(hero : Hero){
     this.selectedHero = hero;
   }
