@@ -1,14 +1,14 @@
 import { Component, OnInit } from '@angular/core';
 import { Hero } from '../hero';
 import { NgFor } from '@angular/common';
-import { HeroDetailComponent } from "../hero-detail/hero-detail.component";
 import { HeroService } from '../hero.service';
 import { MessageService } from '../message.service';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-heroes',
   standalone: true,
-  imports: [  NgFor, HeroDetailComponent ],
+  imports: [  NgFor, RouterLink ],
   templateUrl: './heroes.component.html',
   styleUrl: './heroes.component.css'
 })
