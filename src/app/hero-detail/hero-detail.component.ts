@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Hero } from '../hero';
 import { NgIf, UpperCasePipe, Location } from '@angular/common';
 import { FormsModule } from '@angular/forms'; // <-- NgModel lives here
@@ -13,8 +13,9 @@ import { HeroService } from '../hero.service';
   styleUrl: './hero-detail.component.css'
 })
 
-export class HeroDetailComponent {
-  @Input() hero?: Hero;
+export class HeroDetailComponent implements OnInit {
+  // @Input() hero?: Hero;
+  hero: Hero | undefined;
 
   constructor(private route: ActivatedRoute, private heroService: HeroService, private location: Location) { }
 
