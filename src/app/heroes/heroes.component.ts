@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { Hero } from '../hero';
 import { NgFor } from '@angular/common';
 import { HeroService } from '../hero.service';
-import { MessageService } from '../message.service';
 import { RouterLink } from '@angular/router';
 
 @Component({
@@ -17,7 +16,7 @@ export class HeroesComponent implements OnInit {
   heroes: Hero[] = [];
   // selectedHero?: Hero 
 
-  constructor(private heroService: HeroService, private messageService: MessageService) {}
+  constructor(private heroService: HeroService ) {}
 
   getHeroes(): void {
     this.heroService.getHeroes().subscribe(heroes => this.heroes = heroes);
